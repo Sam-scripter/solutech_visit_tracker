@@ -14,8 +14,9 @@ class VisitCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: ListTile(
         leading: visit.isSynced
-            ? const Icon(Icons.check_circle, color: Colors.green)
+            ? const Icon(Icons.cloud_done, color: Colors.green)
             : const Icon(Icons.sync_problem, color: Colors.orange),
+
         title: Text(
           DateFormat.yMMMEd().format(visit.visitDate),
           style: const TextStyle(fontWeight: FontWeight.bold),

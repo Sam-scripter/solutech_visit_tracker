@@ -1,17 +1,18 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import '../../core/constants.dart';
 import '../models/activity.dart';
 import '../models/customer.dart';
 import '../models/visit.dart';
 
+/// [ApiService] handles all HTTP interactions with the Supabase backend.
+/// It provides methods for CRUD operations on visits, customers, and activities.
 class ApiService {
-  static const String baseUrl = 'https://kqgbftwsodpttpqgqnbh.supabase.co/rest/v1';
-  static const Map<String, String> headers = {
-    'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtxZ2JmdHdzb2RwdHRwcWdxbmJoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU5ODk5OTksImV4cCI6MjA2MTU2NTk5OX0.rwJSY4bJaNdB8jDn3YJJu_gKtznzm-dUKQb4OvRtP6c',
-    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtxZ2JmdHdzb2RwdHRwcWdxbmJoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU5ODk5OTksImV4cCI6MjA2MTU2NTk5OX0.rwJSY4bJaNdB8jDn3YJJu_gKtznzm-dUKQb4OvRtP6c',
-    'Content-Type': 'application/json',
-  };
 
+  /// Sends a POST request to create a new visit in the backend.
+  ///
+  /// Returns `true` if the visit was successfully created (HTTP 200 or 201).
+  /// Returns `false` otherwise and prints the error response.
   Future<bool> postVisit(Visit visit) async {
     final url = Uri.parse('$baseUrl/visits');
     final response = await http.post(
@@ -28,6 +29,10 @@ class ApiService {
     }
   }
 
+  /// Fetches a list of all customers from the Supabase API.
+  ///
+  /// Returns a `List<Customer>` on success.
+  /// Throws an [Exception] if the request fails.
   Future<List<Customer>> fetchCustomers() async {
     final url = Uri.parse('$baseUrl/customers');
     final response = await http.get(url, headers: headers);
@@ -40,6 +45,10 @@ class ApiService {
     }
   }
 
+  /// Fetches a list of all activities from the Supabase API.
+  ///
+  /// Returns a `List<Activity>` on success.
+  /// Throws an [Exception] if the request fails.
   Future<List<Activity>> fetchActivities() async {
     final url = Uri.parse('$baseUrl/activities');
     final response = await http.get(url, headers: headers);
@@ -52,6 +61,10 @@ class ApiService {
     }
   }
 
+  /// Fetches all visits from the Supabase API, ordered by `visit_date` descending.
+  ///
+  /// Returns a `List<Visit>` on success.
+  /// Throws an [Exception] if the request fails.
   Future<List<Visit>> fetchVisits() async {
     final url = Uri.parse('$baseUrl/visits?order=visit_date.desc');
     final response = await http.get(url, headers: headers);
@@ -63,5 +76,4 @@ class ApiService {
       throw Exception('Failed to load visits');
     }
   }
-
 }

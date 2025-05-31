@@ -1,16 +1,94 @@
-# visits_tracker_app
+# Visits Tracker App
 
-A new Flutter project.
+The **Visits Tracker App** is a Flutter-based mobile application that allows users to log customer visits offline and automatically sync them with a backend (Supabase) when online.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Offline-first support**: Save visits, customers, and activities without an internet connection.
+- **Automatic sync**: Unsynced visits are pushed to the server when network becomes available.
+- **Visit management**: Add visit details including location, time, activities done, and status.
+- **Date range & status filters**: Filter visits by status (completed, pending, cancelled) or date.
+- **Search visits**: Search visits by location or notes.
+- **Local storage**: Customers, activities, and visits are cached in Hive for offline access.
+- **Connectivity-aware**: Reacts to connectivity changes using `connectivity_plus`.
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Technologies Used
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| Technology     | Purpose                                      |
+|----------------|----------------------------------------------|
+| Flutter        | Mobile UI toolkit                            |
+| Riverpod       | State management                             |
+| Hive           | Local/offline data storage                   |
+| Supabase       | Backend-as-a-service (PostgreSQL + REST API) |
+| Connectivity+  | Network connection monitoring                |
+
+---
+
+## Data Flow
+
+1. **Customers & Activities**
+    - Fetched from Supabase on startup (when online).
+    - Stored locally using Hive (`customers`, `activities` boxes).
+    - Read from Hive when offline.
+
+2. **Visit Creation**
+    - User fills a form to submit a visit.
+    - If **online**, visit is uploaded to Supabase and marked as `isSynced: true`.
+    - If **offline**, visit is saved locally with `isSynced: false`.
+
+3. **Sync Logic**
+    - `visitListProvider` syncs unsynced visits automatically when connectivity is restored.
+    - Synced visits are fetched from Supabase and stored locally.
+
+---
+
+## Screenshots
+
+## How to Run
+
+### Prerequisites
+
+- Flutter 3.x or newer
+- Hive & Supabase credentials configured
+- Android Studio or Visual Studio Code
+
+### Setup Steps
+
+1. Clone this repository:
+   ```terminal
+   git clone https://github.com/Sam-scripter/visits_tracker_app.git
+   cd visits_tracker_app
+2. Get packages:
+   ```terminal
+   flutter pub get
+3. Generate Hive adapters(if not done):
+   ```terminal
+   flutter packages pub run build_runner build
+4. Run the app:
+   ```terminal
+   flutter run
+   
+
+## Boxes and Models
+| Box Name     | Model      | Purpose                 |
+| ------------ | ---------- | ----------------------- |
+| `visits`     | `Visit`    | Stores visit records    |
+| `customers`  | `Customer` | Cached customer data    |
+| `activities` | `Activity` | Cached visit activities |
+
+## Sync Strategy
+ - All visits are first saved to the visits Hive box.
+ - On reconnect (e.g., Wi-Fi or mobile data), unsynced visits are uploaded to Supabase, in an instance where this fails, the user can manually sync the visits.
+ - Synced visits are then reloaded from Supabase for consistency.
+
+## Offline-First Considerations
+ - App does not crash or degrade when offline.
+ - Users can add visits anytime, which guarantees uninterrupted data entry.
+ - Sync is handled automatically when the user comes back online.
+
+## Assumptions and Limitations
+ - Supabase is available and configured with required tables and API keys.
+ - No authentication is currently implemented.
+ - Users must manually retry syncing in some edge cases if automatic sync fails.
