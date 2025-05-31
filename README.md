@@ -45,17 +45,20 @@ The **Visits Tracker App** is a Flutter-based mobile application that allows use
 ---
 
 ## Screenshots
-![app screenshot1](https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot1.jpg)
-![app screenshot2](https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot2.jpg)
-![app screenshot3](https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot3.jpg)
-![app screenshot4](https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot4.jpg)
-![app screenshot5](https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot5.jpg)
-![app screenshot6](https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot6.jpg)
-![app screenshot7](https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot7.jpg)
-![app screenshot8](https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot8.jpg)
-![app screenshot9](https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot9.jpg)
-![app screenshot10](https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot12.jpg)
-![app screenshot11](https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot13.jpg)
+
+<img src="https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot1.jpg" width="350" height="750">
+<img src="https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot2.jpg" width="350" height="750">
+<img src="https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot3.jpg" width="350" height="750">
+<img src="https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot4.jpg" width="350" height="750">
+<img src="https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot5.jpg" width="350" height="750">
+<img src="https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot6.jpg" width="350" height="750">
+<img src="https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot7.jpg" width="350" height="750">
+<img src="https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot8.jpg" width="350" height="750">
+<img src="https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot9.jpg" width="350" height="750">
+<img src="https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot12.jpg" width="350" height="750">
+<img src="https://github.com/Sam-scripter/solutech_visit_tracker/blob/b356cbc885bc4d6eeda2950cb67346ae65841f91/screenshot13.jpg" width="350" height="750"> 
+
+
 
 ---
 ## How to Run
